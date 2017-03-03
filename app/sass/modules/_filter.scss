@@ -1,0 +1,112 @@
+.news-filter {
+  width: calc(100% - 30px);
+  margin: 0 15px 50px;
+  background: #fff;
+  min-height: 100px;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: #323539;
+    @include fontSize(16px);
+    font-weight: 400;
+    line-height: 25px;
+    padding: 0 10px;
+  }
+
+  .jqselect {
+    margin-left: 25px;
+    margin-right: 10px;
+
+    .jq-selectbox__select {
+      border: none;
+      background: none;
+      text-shadow: none!important;
+      box-shadow: none;
+      padding-left: 15px;
+      padding-right: 25px;
+      position: relative;
+      border-radius: 0;
+
+      &:after {
+        content: '\f107';
+        font-family: FontAwesome;
+        color: #26509e;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        position: absolute;
+        top: 5px;
+        right: 3px;
+      }
+
+      .jq-selectbox__select-text {
+        text-shadow: none;
+        color: #26509e;
+        @include fontSize(16px);
+        font-weight: 400;
+        line-height: 32px;
+        width: auto!important;
+      }
+    }
+
+    .jq-selectbox__trigger {display: none;}
+    .jq-selectbox__dropdown {
+      border-radius: 0;
+      background-color: #ffffff;
+      border: 0;
+      margin-top: 0;
+      box-shadow: none;
+      top: 72px!important;
+      min-width: 250px;
+      padding: 10px 0 15px;
+
+      li {
+        &.sel {display: none}
+
+        color: #323539;
+        @include fontSize(16px);
+        font-weight: 400;
+        line-height: 25px;
+        padding: 6px 25px;
+      }
+    }
+
+    &.opened {
+      .jq-selectbox__select {}
+    }
+  }
+
+  .search {
+    position: relative;
+
+    input[type='search'] {
+      color: #81878e;
+      @include fontSize(16px);
+      font-weight: 400;
+      line-height: 41px;
+      border: 1px solid #d4dee4;
+      background-color: #f8fafb;
+      padding-left: 17px;
+      padding-right: 35px;
+      outline: none;
+
+      &::-webkit-input-placeholder {
+        color: #81878e;
+      }
+    }
+    input[type='submit'] {
+      border: none;
+      font-size: 0;
+      background: url(../img/search-2-bg.png) no-repeat 50% 50%;
+      width: 16px;
+      height: 45px;
+      position: absolute;
+      right: 15px;
+      top: 0;
+      outline: none;
+    }
+  }
+}

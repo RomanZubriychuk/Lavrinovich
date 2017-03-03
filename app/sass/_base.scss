@@ -1,0 +1,98 @@
+@import "bourbon";
+@import "vars";
+
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	color: #666;
+	}
+
+body input:required:valid,
+body textarea:required:valid {
+	color: #666;
+}
+
+body {
+	min-width: 320px;
+	position: relative;
+	font-family: $default-font;
+	overflow-x: hidden;
+}
+
+
+html {
+	font-size: 16px!important;
+}
+
+//Mixin to calculate REM
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+	font-size: $size; //Fallback in px
+	font-size: calculateRem($size);
+}
+
+.base-link {
+	background-color: #ffffff;
+	background-image: linear-gradient(to left, #46a3db 0%, #46a3db 100%);
+	color: #fff;
+	@include fontSize(12px);
+	font-weight: 500;
+	line-height: 50px;
+	display: inline-block;
+	padding: 0 25px;
+
+	&:hover {
+		background-color: #ffffff;
+		background-image: linear-gradient(to left, #244b9b 0%, #46a3db 100%);
+		text-decoration: none;
+		color: #fff;
+	}
+}
+.base-wrap {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 100px 15px 120px;
+
+  .base-title {
+    color: #323539;
+    @include fontSize(33px);
+    font-weight: 400;
+    line-height: 51px;
+    width: 100%;
+	margin-bottom: 40px;
+
+    &:after {
+      content:'';
+      display: block;
+      width: 40px;
+      height: 2px;
+      margin-top: 10px;
+
+      background-color: #318aca;
+      background-image: linear-gradient(to left, #244b9b 0%, #46a3db 100%);
+    }
+  }
+}

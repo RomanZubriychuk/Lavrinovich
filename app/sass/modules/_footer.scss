@@ -1,0 +1,130 @@
+footer {
+  background-color: #30323e;
+
+  .wrap {
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 60px 15px 40px;
+    position: relative;
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .title {color: #ffffff;
+      @include fontSize(21px);
+      font-weight: 400;
+      line-height: 51px;
+      width: 100%;
+    }
+
+    .item {
+      width: calc(25% - 15px);
+
+      li > a {
+        color: #bdbdbd;
+        @include fontSize(13px);
+        font-weight: 400;
+        line-height: 32px;
+
+        &:hover {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+      > p {
+        @include fontSize(13px);
+        font-weight: 400;
+        line-height: 25px;
+        color: #bdbdbd;
+      }
+      .subscribe {
+        position: relative;
+        margin-bottom: 25px;
+
+        p {
+          color: #fff;
+          @include fontSize(13px);
+          font-weight: 400;
+          line-height: 25px;
+          padding-bottom: 15px;
+          padding-top: 28px;
+        }
+
+        input[type='email'] {
+          width: 100%;
+          max-width: 190px;
+          background: none;
+          border: 1px solid #afafb0;
+          color: #bdbdbd;
+          @include fontSize(13px);
+          font-weight: 400;
+          line-height: 38px;
+          padding: 2px 15px;
+        }
+        input[type='submit']{
+          font-size: 0;
+          border: none;
+          background: url(../img/right-arrow.png) no-repeat 50% 50%;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          left: 170px;
+          bottom: 17px;
+        }
+      }
+      .social {
+        a {
+          font-weight: 400;
+          line-height: 21px;
+          color: #afafb0;
+          @include fontSize(20px);
+          transition: all ease-in 0.2s;
+          margin-right: 20px;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .item-title {
+      color: #ffffff;
+      @include fontSize(14px);
+      font-weight: 400;
+      line-height: 51px;
+      min-height: 51px;
+    }
+  }
+  .header-bottom {
+    p, a {
+      color: #bdbdbd;
+      @include fontSize(13px);
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
+
+  #back-to-top {
+    position: absolute;
+    right: 15px;
+    top: 90px;
+    color: #bdbdbd;
+    @include fontSize(13px);
+    font-weight: 400;
+    line-height: 25px;
+
+    i {
+      display: block;
+      text-align: center;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

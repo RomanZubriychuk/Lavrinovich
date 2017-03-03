@@ -1,0 +1,43 @@
+.services {
+  background-color: #e7f3fc;
+
+  .base-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 90px;
+  }
+
+  .item {
+    width: calc(50% - 15px);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .service-item {
+      width: calc(50% - 15px);
+      background: #fff;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+
+      p {
+        color: #323539;
+        @include fontSize(16px);
+        font-weight: 400;
+        min-height: 35px;
+        margin-top: 30px;
+      }
+    }
+
+    >img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+  }
+}
