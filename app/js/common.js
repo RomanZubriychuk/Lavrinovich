@@ -1,8 +1,7 @@
 $(function() {
-    $('li').click(function(){
-        $(this).children('.submenu').slideToggle(function (){
-            $(this).prev('.caret').toggleClass('active')
-        });
+    $('.caret').click(function(){
+        $(this).next('.submenu').toggle();
+        $(this).toggleClass('active')
     });
     $('#m-contacts').click(function(){
         $('.more-contacts .toggle-block').slideToggle();
@@ -12,10 +11,10 @@ $(function() {
     //Carousel
     $('.carousel-1').owlCarousel({
         loop:true,
-        autoplay:true,
+        autoplay:false,
         autoplayTimeout:5000,
         autoplayHoverPause:false,
-        margin:10,
+        margin:0,
         nav:false,
         responsive:{
             0:{
@@ -34,7 +33,7 @@ $(function() {
             0:{
                 items:1
             },
-            800:{
+            700:{
                 items:2
             },
             1200:{
@@ -76,4 +75,7 @@ $(function() {
             }, 2000);
         });
     }
+
+    //Magnific popUp
+    $('.popUp-btn').magnificPopup();
 });

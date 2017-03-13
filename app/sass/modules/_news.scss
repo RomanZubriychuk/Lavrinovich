@@ -27,6 +27,27 @@
         }
     }
 
+    .owl-dots {
+        text-align: center;
+        margin-top: 30px;
+
+        .owl-dot {
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 7px;
+            width: 10px;
+            height: 10px;
+            background-color: #a4b8c5;
+
+            &.active {
+                width: 12px;
+                height: 12px;
+                margin-bottom: -1px;
+                background-color: #0087d7;
+            }
+        }
+    }
+
     .base-link {
         margin-top: 40px;
     }
@@ -41,6 +62,10 @@
             flex-wrap: wrap;
             margin-left: -15px;
             margin-right: -15px;
+
+            @media (max-width: 1550px) {
+                justify-content: center;
+            }
 
             .item {
                 width: 100%;
@@ -71,7 +96,12 @@
                 .date {
                     padding-top: 12px;
                 }
-
+                img {
+                    @media (max-width: 400px) {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
                 &:hover {
                     .tag {
                         background-color: #316cb3;

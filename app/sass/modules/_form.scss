@@ -2,7 +2,11 @@
   .wrap {
     max-width: 1140px;
     margin: 0 auto;
-    padding-bottom: 80px;
+    padding: 0 15px 80px;
+
+    @media (max-width: 700px) {
+      padding-bottom: 40px;
+    }
   }
   .title {
     color: #323539;
@@ -30,6 +34,10 @@
       &:not([type='submit']) {
         color: #6d6d6d;
         width: calc(33.33% - 20px);
+
+        @media (max-width: 700px) {
+          width: 100%;
+        }
       }
     }
 

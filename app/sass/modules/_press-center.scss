@@ -10,19 +10,32 @@
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     .item {
       background-color: #fff;
       width: 100%;
       max-width: 475px;
-      margin: 0 15px;
+      margin: 15px 15px;
       position: relative;
       padding: 30px 0 30px 168px;
       min-height: 200px;
+
+      @media (max-width: 700px) {
+        padding: 30px 0 30px 140px;
+      }
 
       img {
         position: absolute;
         top: 30px;
         left: 30px;
+
+        @media (max-width: 700px) {
+          left: 15px;
+        }
       }
       .name {
         color: #323539;
@@ -76,7 +89,7 @@
 .materials {
   .base-wrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding-left: 0;
     padding-right: 0;
@@ -88,7 +101,7 @@
     width: 100%;
     max-width: 350px;
     margin: 0 15px;
-    padding-bottom: 25px;
+    padding-bottom: 30px;
 
     .item-title {
       color: #323539;
@@ -190,5 +203,193 @@
     @include fontSize(15px);
     font-weight: 400;
     line-height: 36px;
+  }
+}
+
+.post {
+  .wrap {
+    max-width: 1330px;
+    padding: 90px 15px 120px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 950px) {
+      flex-direction: column;
+      padding: 50px 15px 60px;
+    }
+  }
+
+  .post-text {
+    width: 100%;
+    max-width: 940px;
+    margin-right: 90px;
+
+    @media (max-width: 950px) {
+      margin-right: 0;
+    }
+
+    .img-block img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    iframe {
+      width: 100%!important;
+      max-width: 854px;
+    }
+
+    .date {
+      color: #459fd8;
+      @include fontSize(14px);
+      font-weight: 400;
+      line-height: 25px;
+    }
+
+    .post-title {
+      color: #323539;
+      @include fontSize(33px);
+      font-weight: 400;
+      line-height: 40px;
+      padding: 30px 0 30px;
+    }
+
+    p {
+      color: #323539;
+      @include fontSize(16px);
+      font-weight: 400;
+      line-height: 25px;
+      padding-bottom: 25px;
+
+      &.italic {
+        color: #7a7f86;
+        @include fontSize(16px);
+        font-style: italic;
+        line-height: 40px;
+      }
+    }
+
+    .social-btn-block {
+      border-top: 1px solid #dfdfdf;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-top: 45px;
+      margin-top: 45px;
+
+      @media (max-width: 430px) {
+        flex-wrap: wrap;
+      }
+
+      p {
+        padding-bottom: 0!important;
+        color: #5c5f64;
+        @include fontSize(14px);
+        font-weight: 400;
+        line-height: 21px;
+        margin-right: 15px;
+
+        @media (max-width: 430px) {
+          width: 100%;
+        }
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        max-width: 102px;
+        background-color: #526eac;
+        margin: 5px;
+        text-align: center;
+        transition: all ease-in 0.2s;
+        color: #fff;
+        font-weight: 400;
+        line-height: 38px;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: none;
+          opacity: 0.9;
+        }
+
+        &.in {background-color: #0077b5;}
+        &.tw {background-color: #00abed;}
+
+        i {
+          font-size: 16px;
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+
+  .post-sidebar {
+    max-width: 350px;
+
+    @media (max-width: 950px) {
+      display: none;
+    }
+
+    .base-title {
+      @include fontSize(26px);
+      line-height: 1;
+
+      &:after {
+        margin-top: 20px;
+      }
+    }
+
+    .item {
+      display: block;
+      margin-bottom: 50px;
+
+      @media (max-width: 950px) {
+        max-width: 300px;
+      }
+
+      .tag {
+        color: #fff;
+        @include fontSize(11px);
+        font-weight: 400;
+        line-height: 25px;
+        background-color: #459fd8;
+        display: inline-block;
+        padding: 0 12px;
+        margin-top: 19px;
+
+        &.video {
+          position: relative;
+
+          &:after {
+            content: url(../img/video-tag.png);
+            position: absolute;
+            right: -45px;
+          }
+        }
+      }
+      .date {
+        padding-top: 12px;
+      }
+      p {
+        color: #323539;
+        @include fontSize(16px);
+        font-weight: 400;
+        line-height: 25px;
+      }
+
+      &:hover {
+        text-decoration: none;
+
+        p {
+          color: #254d9c;
+        }
+
+        .tag {
+          background-color: #316cb3;
+        }
+      }
+    }
   }
 }

@@ -2,6 +2,11 @@
   padding-top: 0!important;
   height: 100vh;
 
+  @media (max-width: 800px) {
+    height: auto;
+    min-height: inherit!important;
+  }
+
   .item {
     overflow: hidden;
     position: relative;
@@ -10,15 +15,35 @@
     align-items: flex-end;
     height: 100vh;
 
+    @media (max-width: 800px) {
+      height: auto;
+      display: block;
+      padding-top: 95px;
+      background: #324379;
+    }
+
+    @media (max-width: 600px) {
+      padding-top: 70px;
+    }
+
     img {
       position: absolute;
       width: auto;
-      min-width: 100%;
+      min-width: 101%;
       min-height: 100%;
       left: 50%;
       top: 50%;
       transform: translate(-50%,-50%);
       z-index: -1;
+
+      @media (max-width: 800px) {
+        transform: none;
+        width: 100%;
+        height: auto;
+        min-width: inherit;
+        min-height: inherit;
+        position: static;
+      }
     }
   }
 
@@ -28,12 +53,32 @@
     padding: 0 15px 20vh;
     margin: 0 auto;
 
+    @media (max-width: 800px) {
+      padding-bottom: 90px;
+      padding-top: 30px;
+      background-color: #37467d;
+
+      h1 {
+        text-align: left;
+      }
+    }
+
     h1 {
       color: #fff;
-      font-size: 40px;
+      @include fontSize(40px);
       font-weight: 400;
       line-height: 51px;
       margin-bottom: 5px;
+      text-align: left;
+      padding-left: 75px;
+
+      @media (max-width: 800px) {
+        margin-bottom: 15px;
+        padding-left: 0;
+        line-height: 35px;
+        @include fontSize(30px);
+        margin-bottom: 0;
+      }
     }
 
     p {
@@ -42,10 +87,21 @@
       font-weight: 700;
       line-height: 51px;
       margin-bottom: 15px;
+      padding-left: 75px;
+
+      @media (max-width: 800px) {
+        padding-left: 0;
+        margin-bottom: 23px;
+      }
     }
 
     a {
       margin-bottom: 15px;
+      margin-left: 75px;
+
+      @media (max-width: 800px) {
+        margin-left: 0;
+      }
     }
   }
   .owl-dots {
@@ -53,11 +109,16 @@
     bottom: 10vh;
     max-width: 1650px;
     width: 100%;
-    left: 50%;
+    left: calc(50% + 75px);
     transform: translateX(-50%);
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+
+    @media (max-width: 800px) {
+      bottom: 50px;
+      left: 50%;
+    }
 
     .owl-dot {
       width: 32px;
@@ -81,13 +142,14 @@
   justify-content: center;
   align-items: center;
   padding-top: 100px;
+  overflow: hidden;
 
   img {
     position: absolute;
     z-index: -1;
     width: auto;
     height: auto;
-    min-height: 100%;
+    min-height: 101%;
     min-width: 100%;
     left: 50%;
     top: 50%;

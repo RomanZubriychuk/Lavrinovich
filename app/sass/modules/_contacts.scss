@@ -5,6 +5,11 @@
     padding: 80px 15px 60px;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 760px) {
+      display: block;
+      padding: 50px 15px 40px;
+    }
   }
   .custom-g-map {
     width: 100%;
@@ -19,6 +24,11 @@
     width: 100%;
     max-width: 350px;
     padding-left: 65px;
+
+    @media (max-width: 760px) {
+      padding-left: 0;
+      margin-top: 30px;
+    }
 
     .title {
       color: #323539;
